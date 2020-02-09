@@ -20,45 +20,53 @@
             <h4 class="fw-300 c-grey-900 mB-40">{{ msg | safe }}</h4>
         {% else %}
             <h4 class="fw-300 c-grey-900 mB-40">Register</h4>
+        {% endif %} 
+
+        {% if success %}
+        
+          Please <a href={% url 'login' %} class="text-black text-small">Login</a> 
+
+        {% else %}
+
+          <form method="post" action="">
+
+            {% csrf_token %}
+
+            <div class="form-group">
+              <label class="text-normal text-dark">Username</label>
+              {{ form.username }}
+            </div>
+            <span class="text-danger">{{ form.username.errors }}</span>
+            
+            <div class="form-group">
+              <label class="text-normal text-dark">eMail Address</label>
+              {{ form.email }}
+            </div>
+            <span class="text-danger">{{ form.email.errors }}</span>
+
+            <div class="form-group">
+              <label class="text-normal text-dark">Password</label>
+              {{ form.password1 }}
+            </div>
+            <span class="text-danger">{{ form.password1.errors }}</span>
+
+            <div class="form-group">
+              <label class="text-normal text-dark">Password</label>
+              {{ form.password2 }}
+            </div>
+            <span class="text-danger">{{ form.password2.errors }}</span>
+
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary">Register</button> 
+
+              &nbsp; &nbsp;
+              <span class="text-small font-weight-semibold">Already have and account?</span>
+              <a href="/login.html" class="text-black text-small">Login</a>    
+            </div>
+
+          </form>
         {% endif %}
 
-        <form method="post" action="">
-
-          {% csrf_token %}
-
-          <div class="form-group">
-            <label class="text-normal text-dark">Username</label>
-            {{ form.username }}
-          </div>
-          <span class="text-danger">{{ form.username.errors }}</span>
-          
-          <div class="form-group">
-            <label class="text-normal text-dark">eMail Address</label>
-            {{ form.email }}
-          </div>
-          <span class="text-danger">{{ form.email.errors }}</span>
-
-          <div class="form-group">
-            <label class="text-normal text-dark">Password</label>
-            {{ form.password1 }}
-          </div>
-          <span class="text-danger">{{ form.password1.errors }}</span>
-
-          <div class="form-group">
-            <label class="text-normal text-dark">Password</label>
-            {{ form.password2 }}
-          </div>
-          <span class="text-danger">{{ form.password2.errors }}</span>
-
-          <div class="form-group">
-            <button type="submit" class="btn btn-primary">Register</button> 
-
-            &nbsp; &nbsp;
-            <span class="text-small font-weight-semibold">Already have and account?</span>
-            <a href="/login.html" class="text-black text-small">Login</a>    
-          </div>
-
-        </form>
       </div>
 
 {% endblock content %}
