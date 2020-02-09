@@ -37,7 +37,7 @@ def login_view(request):
 
 def register_user(request):
 
-    msg     = 'Add your credentials'
+    msg     = None
     success = False
 
     if request.method == "POST":
