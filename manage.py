@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-License: Commercial
+License: MIT
 Copyright (c) 2019 - present AppSeed.us
 """
 
