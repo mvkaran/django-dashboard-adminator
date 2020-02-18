@@ -17,10 +17,11 @@
 - **Gunicorn** / Nginx - a common used configuration for Django Apps
 - **Waitress** - Gunicorn equivalent for Windows.       
 
-### Web App Links
+### Dashboard Links
 
 - [Django Dashboard Adminator](https://appseed.us/admin-dashboards/django-dashboard-adminator) - product page 
-- [Django Dashboard Adminator](https://django-dashboard-adminator.herokuapp.com/) - LIVE Demo
+- [Django Dashboard Adminator](https://django-dashboard-adminator.appseed.us/login/) - LIVE Demo
+- [Django Dashboard Adminator](https://www.youtube.com/watch?v=IawSvqtwLd8) - yTube presentation
 
 <br />
 
@@ -183,7 +184,6 @@ Visit `http://localhost:8001` in your browser. The app should be up & running.
 
 ## Credits
 
-- [Django Dashboard Adminator](https://www.youtube.com/watch?v=IawSvqtwLd8) - yTube presentation
 - [Django Framework](https://www.djangoproject.com/) - Offcial website
 - [Django Admin Dashboards](https://appseed.us/admin-dashboards/django) - Open-source and paid admin panels coded in **Django**
 
