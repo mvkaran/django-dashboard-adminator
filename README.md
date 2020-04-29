@@ -70,7 +70,7 @@ $ virtualenv env
 $ source env/bin/activate
 $
 $ # Virtualenv modules installation (Windows based systems)
-$ # virtualenv --no-site-packages env
+$ # virtualenv env
 $ # .\env\Scripts\activate
 $ 
 $ # Install modules
