@@ -1,0 +1,26 @@
+version: '3'
+services:
+  app:
+    restart: always
+    env_file: .env
+    build:
+      context: .
+      dockerfile: Dockerfile-app
+    image: mvkaran/django-dashboard-adminator:app-1.0
+    networks:
+      - web_network
+  nginx:
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile-nginx
+    image: mvkaran/django-dashboard-adminator:nginx-1.1
+    ports:
+      - "80:85"
+    networks:
+      - web_network
+    depends_on: 
+      - app
+networks:
+  web_network:
+    driver: bridge
