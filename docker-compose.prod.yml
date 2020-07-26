@@ -3,12 +3,12 @@ services:
   app:
     restart: always
     env_file: .env
-    image: mvkaran/django-dashboard-adminator:app-1.0
+    image: mvkaran/django-dashboard-adminator:app-latest
     networks:
       - web_network
   nginx:
     restart: always
-    image: mvkaran/django-dashboard-adminator:nginx-1.1
+    image: mvkaran/django-dashboard-adminator:nginx-latest
     ports:
       - "80:85"
     networks:
