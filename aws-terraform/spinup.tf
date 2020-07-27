@@ -13,4 +13,6 @@ resource "aws_instance" "webserver" {
   ami           = "ami-2757f631"
   instance_type = "t2.micro"
   key_name = "TerraformKeyPair"
+  user_data = file("deploy.sh")
+  security_groups = ["WebServerSG"]
 }
