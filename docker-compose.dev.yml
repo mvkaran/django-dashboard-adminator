@@ -1,27 +1,28 @@
 version: '3'
 services:
-  appseed-app:
+  app:
     restart: always
     env_file: .env
-    build: .
-    ports:
-      - "5005:5005"
+    build:
+      context: .
+      dockerfile: Dockerfile-app
+    image: mvkaran/django-dashboard-adminator:app-1.0
     networks:
-      - db_network
       - web_network
   nginx:
     restart: always
-    image: "nginx:latest"
+    build:
+      context: .
+      dockerfile: Dockerfile-nginx
+    image: mvkaran/django-dashboard-adminator:nginx-1.0
     ports:
-      - "85:85"
+      - "80:85"
     volumes:
       - ./nginx:/etc/nginx/conf.d
     networks:
       - web_network
     depends_on: 
-      - appseed-app
+      - app
 networks:
-  db_network:
-    driver: bridge
   web_network:
     driver: bridge
